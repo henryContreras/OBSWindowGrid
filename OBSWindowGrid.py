@@ -75,15 +75,15 @@ def script_description():
 
 	return "<b>OBS Window Grid</b>" + \
 		"<hr>" + \
-		"Разделяет экран предпросмотра на ячейки." + \
+		"Divides the preview screen into cells." + \
 		"<br/>" + \
-		"Установите размер ячеек, или количество по горизонтали и вертикали" + \
+		"Set the size of the cells, or the number of horizontal and vertical" + \
 		"<br/>" + \
-		"Затем нажмите \"Построить сетку\"." + \
+		"Then click \"Generate Mesh\"." + \
 		"<br/>" + \
-		"После размещения всех элементов на сцене нажмите кнопку \"Удалить сетку\"" + \
+		"After placing all the elements on the stage, click the \"Delete Mesh\" button" + \
 		"<br/><br/>" + \
-		"Бочкарев Кирилл, © 2019" + \
+		"Bochkarev Kirill, © 2019" + \
 		"<hr>"
 
 def script_load(settings):
@@ -97,14 +97,14 @@ def script_properties():
 	if Debug_Mode: print("Calling properties")	
 
 	props = obs.obs_properties_create()
-	obs.obs_properties_add_int(props, "x_coord", "Ширина", 100, 1920, 1)
-	obs.obs_properties_add_int(props, "y_coord", "Высота", 100, 1080, 1)
-	obs.obs_properties_add_int(props, "width_count", "Количество по горизонтали", 1, 1000, 1)
-	obs.obs_properties_add_int(props, "height_count", "Количество по вертикали", 1, 1000, 1)
-	obs.obs_properties_add_button(props, "start", "Построить сетку по ширине/высоте", startClick)
-	obs.obs_properties_add_button(props, "start_count", "Построить сетку по количеству", startCountClick)
-	obs.obs_properties_add_button(props, "delete", "Удалить сетку", deleteGridClick)
-	obs.obs_properties_add_bool(props, "debug_mode", "Режим отладки")
+	obs.obs_properties_add_int(props, "x_coord", "Width", 100, 1920, 1)
+	obs.obs_properties_add_int(props, "y_coord", "Height", 100, 1080, 1)
+	obs.obs_properties_add_int(props, "width_count", "Horizontal quantity", 1, 1000, 1)
+	obs.obs_properties_add_int(props, "height_count", "Vertical quantity", 1, 1000, 1)
+	obs.obs_properties_add_button(props, "start", "Build grid by width/height", startClick)
+	obs.obs_properties_add_button(props, "start_count", "Build a grid by quantity", startCountClick)
+	obs.obs_properties_add_button(props, "delete", "Delete grid", deleteGridClick)
+	obs.obs_properties_add_bool(props, "debug_mode", "Debug Mode")
 
 	return props
 
